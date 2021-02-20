@@ -1,5 +1,5 @@
 declare namespace Layout {
-  interface IPassProps {
+  interface PassProps {
     children: React.ReactNode;
   }
 }
