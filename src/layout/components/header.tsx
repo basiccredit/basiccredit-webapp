@@ -1,8 +1,10 @@
 import React from 'react';
 
-const header = (): JSX.Element => {
+const Header = (): JSX.Element => {
   return (
     <>
     </>
   ); 
 };
+
+export default Header;
