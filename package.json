@@ -24,7 +24,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src && prettier --check src"
+    "lint": "eslint src && prettier --check src",
+    "lint:no-warnings": "eslint src --max-warnings 0 && prettier --check src"
   },
   "eslintConfig": {
     "extends": [
