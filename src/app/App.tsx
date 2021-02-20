@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { Home } from '../home/components/Home';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App(): JSX.Element {
   return (

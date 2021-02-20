@@ -1,8 +1,5 @@
 const Header = (): JSX.Element => {
-  return (
-    <>
-    </>
-  ); 
+  return <></>;
 };
 
 export default Header;
