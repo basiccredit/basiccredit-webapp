@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import Layout from '../../layout/components/Layout';
+import Wallet from "../../wallet/components/Wallet";
 
 const Home = (): JSX.Element => {
   return (
@@ -10,6 +11,7 @@ const Home = (): JSX.Element => {
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
+            <Wallet />
           </p>
           <a
             className="App-link"
