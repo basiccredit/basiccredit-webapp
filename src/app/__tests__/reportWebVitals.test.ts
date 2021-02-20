@@ -26,7 +26,7 @@ describe('reportWebVitals', () => {
     expect(getFCPSpy).not.toBeCalled();
     expect(getLCPSpy).not.toBeCalled();
     expect(getTTFBSpy).not.toBeCalled();
-  }); 
+  });
 
   it('should not call web-vitals methods if onPerfEntry is not a function', () => {
     const onPerfEntry = Symbol() as any;
@@ -38,7 +38,7 @@ describe('reportWebVitals', () => {
     expect(getFCPSpy).not.toBeCalled();
     expect(getLCPSpy).not.toBeCalled();
     expect(getTTFBSpy).not.toBeCalled();
-  }); 
+  });
 
   it('should call web-vitals methods if onPerfEntry is a function', () => {
     function onPerfEntry() {}
@@ -55,5 +55,5 @@ describe('reportWebVitals', () => {
     expect(getFCPSpy).toBeCalledWith(onPerfEntry);
     expect(getLCPSpy).toBeCalledWith(onPerfEntry);
     expect(getTTFBSpy).toBeCalledWith(onPerfEntry);
-  }); 
+  });
 });

@@ -12,6 +12,6 @@ const Layout = (props: Layout.PassProps): JSX.Element => {
       <Footer />
     </>
   );
-}
+};
 
 export default Layout;

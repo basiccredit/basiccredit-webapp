@@ -3,4 +3,3 @@ declare namespace Layout {
     children: React.ReactNode;
   }
 }
-
