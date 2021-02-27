@@ -1,7 +1,7 @@
 export interface Colors {
   // Base
   white: string;
-  black: string;  
+  black: string;
 
   // Blues
   primary1: string;

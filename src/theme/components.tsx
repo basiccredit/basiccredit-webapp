@@ -15,10 +15,10 @@ export const Button = styled.button`
 
   :hover,
   :focus {
-    background-color: ${({ theme }) => darken(0.05, theme.primary1)}
+    background-color: ${({ theme }) => darken(0.05, theme.primary1)};
   }
 
   :active {
-    background-color: ${({ theme }) => darken(0.1, theme.primary1)}
+    background-color: ${({ theme }) => darken(0.1, theme.primary1)};
   }
 `;
