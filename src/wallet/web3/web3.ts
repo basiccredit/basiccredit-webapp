@@ -1,4 +1,4 @@
-import Web3 from "web3";
+import Web3 from 'web3';
 
 export const getWeb3 = async (): Promise<Web3> => {
   const web3 = new Web3(Web3.givenProvider);
@@ -6,4 +6,4 @@ export const getWeb3 = async (): Promise<Web3> => {
   await window.ethereum.enable();
 
   return web3;
-}
+};
