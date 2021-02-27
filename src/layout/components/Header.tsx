@@ -31,7 +31,9 @@ const Header = (): JSX.Element => {
           <Link to="/" className={classes.title}>
             <Typography variant="h6">Basic Credit</Typography>
           </Link>
-          <Button>Borrow</Button>
+          <Link to="/borrow">
+            <Button>Borrow</Button>
+          </Link>
           <Link to="/lend">
             <Button>Lend</Button>
           </Link>
