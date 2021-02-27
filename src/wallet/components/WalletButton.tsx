@@ -28,11 +28,7 @@ export const WalletButton = (): JSX.Element => {
   };
 
   return (
-    <Button
-      variant="contained"
-      color="primary"
-      onClick={onClickConnectWallet}
-    >
+    <Button variant="contained" color="primary" onClick={onClickConnectWallet}>
       <div className={styles.truncate}>{state.buttonText}</div>
     </Button>
   );
