@@ -1,4 +1,4 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Button, createStyles, makeStyles, Theme } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -24,9 +24,11 @@ const Header = (): JSX.Element => {
     <div className={classes.root}>
       <AppBar color="transparent" position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title}> 
             Basic Credit
-          </Typography>        
+          </Typography>
+          <Button>Borrow</Button>
+          <Button>Deposit</Button>
           <WalletButton />
         </Toolbar>
       </AppBar>
