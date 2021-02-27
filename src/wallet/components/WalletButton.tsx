@@ -1,8 +1,21 @@
 import { useState } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, createStyles, makeStyles } from '@material-ui/core';
 import { getAccounts } from '../web3/web3';
 
+const useStyles = makeStyles(() =>
+  createStyles({
+    truncate: {
+      width: '150px',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    },
+  })
+);
+
 export const WalletButton = (): JSX.Element => {
+  const styles = useStyles();
+
   const [state, setState] = useState<Wallet.State>({
     accounts: [],
     buttonText: 'Connect Wallet',
@@ -15,8 +28,12 @@ export const WalletButton = (): JSX.Element => {
   };
 
   return (
-    <Button variant="contained" color="primary" onClick={onClickConnectWallet}>
-      {state.buttonText}
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={onClickConnectWallet}
+    >
+      <div className={styles.truncate}>{state.buttonText}</div>
     </Button>
   );
 };
