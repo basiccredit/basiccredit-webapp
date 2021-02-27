@@ -7,3 +7,8 @@ export const getWeb3 = async (): Promise<Web3> => {
 
   return web3;
 };
+
+export const getAccounts = async (): Promise<string[]> => {
+  const web3 = await getWeb3();
+  return await web3.eth.getAccounts();
+};
