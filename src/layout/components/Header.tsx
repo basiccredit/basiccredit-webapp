@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
-    },
+    }
   })
 );
 
@@ -24,7 +24,7 @@ const Header = (): JSX.Element => {
     <div className={classes.root}>
       <AppBar color="transparent" position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}> 
+          <Typography variant="h6" className={classes.title}>
             Basic Credit
           </Typography>
           <Button>Borrow</Button>

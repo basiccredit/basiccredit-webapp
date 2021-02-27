@@ -5,7 +5,7 @@ const Home = (): JSX.Element => {
   return (
     <Layout>
       <div></div>
-    </Layout> 
+    </Layout>
   );
 };
 
