@@ -19,26 +19,26 @@ export const Borrow = (): JSX.Element => {
   const styles = useStyles();
 
   return (
-  <Layout>
-    <Grid container justify="center" alignItems="center">
-      <Grid item>
-        <Paper className={styles.paper}>
-          <Grid container justify="center" className={styles.titleText}>
-            <Typography variant="h5">Borrow</Typography>
-          </Grid>
-          <Grid container spacing={5}>
-            <Grid item>
-              <Typography className={styles.balanceText}>1115.00</Typography>
-              <Typography>Borrowed Amount</Typography>
+    <Layout>
+      <Grid container justify="center" alignItems="center">
+        <Grid item>
+          <Paper className={styles.paper}>
+            <Grid container justify="center" className={styles.titleText}>
+              <Typography variant="h5">Borrow</Typography>
             </Grid>
-            <Grid item>
-              <Typography>Interest Rate: 15%</Typography>
-              <Typography>Repayment Amount: 11000</Typography>
+            <Grid container spacing={5}>
+              <Grid item>
+                <Typography className={styles.balanceText}>1115.00</Typography>
+                <Typography>Borrowed Amount</Typography>
+              </Grid>
+              <Grid item>
+                <Typography>Interest Rate: 15%</Typography>
+                <Typography>Repayment Amount: 11000</Typography>
+              </Grid>
             </Grid>
-          </Grid>
-        </Paper>
+          </Paper>
+        </Grid>
       </Grid>
-    </Grid>
-  </Layout>
+    </Layout>
   );
 };
