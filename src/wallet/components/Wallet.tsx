@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import Web3 from 'web3';
+import { getWeb3 } from '../web3/web3';
 
 const getAccounts = async (): Promise<string[]> => {
-  const web3 = new Web3(Web3.givenProvider || 'http://localhost:8545');
-  const accounts = await web3.eth.getAccounts();
-  return accounts;
+  const web3 = await getWeb3();
+  return await web3.eth.getAccounts();
 };
 
 const Wallet = (): JSX.Element => {
@@ -15,7 +14,7 @@ const Wallet = (): JSX.Element => {
 
   const onClickConnectWallet = async () => {
     const accounts = await getAccounts();
-    const buttonText = accounts[0];
+    const buttonText = accounts[0] ?? 'No account found';
     setState({ buttonText, accounts });
   };
 
