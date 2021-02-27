@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     appBar: {
       marginBottom: theme.spacing(12),
-    }
+    },
   })
 );
 
@@ -29,9 +29,7 @@ const Header = (): JSX.Element => {
       <AppBar className={classes.appBar} color="transparent" position="static">
         <Toolbar>
           <Link to="/" className={classes.title}>
-            <Typography variant="h6" >
-              Basic Credit
-            </Typography>
+            <Typography variant="h6">Basic Credit</Typography>
           </Link>
           <Button>Borrow</Button>
           <Link to="/lend">
