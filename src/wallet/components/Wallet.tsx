@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button } from '../../theme';
 import { getWeb3 } from '../web3/web3';
 
 const getAccounts = async (): Promise<string[]> => {
@@ -18,7 +19,7 @@ const Wallet = (): JSX.Element => {
     setState({ buttonText, accounts });
   };
 
-  return <button onClick={onClickConnectWallet}>{state.buttonText}</button>;
+  return <Button onClick={onClickConnectWallet}>{state.buttonText}</Button>;
 };
 
 export default Wallet;
