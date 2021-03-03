@@ -14,16 +14,20 @@ const onError = (contractName: string) => (
   console.error(`Error from contract ${contractName}`, error, receipt);
 };
 
+const getContracts = async (network: Readonly<keyof Networks>): Promise<any> => {
+  const web3 = await web3Instance;
+  return new web3.eth.Contract(
+    BASIC_CREDIT_ABIS[network] as any,
+    BASIC_CREDIT_ADDRESSES[network]
+  );
+};
+
 export const depositTokens = async (
   amount: Readonly<number>,
   network: Readonly<keyof Networks>
 ): Promise<void> => {
-  const web3 = await web3Instance;
   const accounts = await getAccounts();
-  const basicCreditContracts = new web3.eth.Contract(
-    BASIC_CREDIT_ABIS[network] as any,
-    BASIC_CREDIT_ADDRESSES[network]
-  );
+  const basicCreditContracts = await getContracts(network);
   await basicCreditContracts.methods
     .DepositTokens(T_DAI_ADDRESSES[network], amount)
     .send({ from: accounts[0] })
@@ -35,12 +39,8 @@ export const withdrawTokens = async (
   amount: Readonly<number>,
   network: Readonly<keyof Networks>
 ): Promise<void> => {
-  const web3 = await web3Instance;
+  const basicCreditContracts = await getContracts(network);
   const accounts = await getAccounts();
-  const basicCreditContracts = new web3.eth.Contract(
-    BASIC_CREDIT_ABIS[network] as any,
-    BASIC_CREDIT_ADDRESSES[network]
-  );
   await basicCreditContracts.methods
     .WithdrawTokens(T_DAI_ADDRESSES[network], amount)
     .send({ from: accounts[0] })
@@ -52,12 +52,8 @@ export const borrowTokens = async (
   amount: Readonly<number>,
   network: Readonly<keyof Networks>
 ): Promise<void> => {
-  const web3 = await web3Instance;
   const accounts = await getAccounts();
-  const basicCreditContracts = new web3.eth.Contract(
-    BASIC_CREDIT_ABIS[network] as any,
-    BASIC_CREDIT_ADDRESSES[network]
-  );
+  const basicCreditContracts = await getContracts(network);
   await basicCreditContracts.methods
     .BorrowTokens(T_DAI_ADDRESSES[network], amount)
     .send({ from: accounts[0] })
@@ -69,12 +65,8 @@ export const repayTokens = async (
   amount: Readonly<number>,
   network: Readonly<keyof Networks>
 ): Promise<void> => {
-  const web3 = await web3Instance;
   const accounts = await getAccounts();
-  const basicCreditContracts = new web3.eth.Contract(
-    BASIC_CREDIT_ABIS[network] as any,
-    BASIC_CREDIT_ADDRESSES[network]
-  );
+  const basicCreditContracts = await getContracts(network);
   await basicCreditContracts.methods
     .RepayTokens(T_DAI_ADDRESSES[network], amount)
     .send({ from: accounts[0] })
