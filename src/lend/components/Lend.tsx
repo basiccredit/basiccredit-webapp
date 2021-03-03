@@ -15,6 +15,7 @@ import Layout from '../../layout/components/Layout';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { depositTokens, withdrawTokens } from '../../blockchain/contracts/basicCredit';
 
 const useStyles = makeStyles((theme: Theme) => ({
   amountInput: {
@@ -65,6 +66,16 @@ export const Lend = (): JSX.Element => {
       target: { value },
     } = event;
     setState({ ...state, amount: value });
+  };
+  const onClickSubmit = async () => {
+    const amount = Number(state.amount);
+    if (amount > 0) {
+      if (state.mode === 'DEPOSIT') {
+        await depositTokens(amount, 'ROPSTEN');
+      } else {
+        await withdrawTokens(amount, 'ROPSTEN');
+      }
+    }
   };
 
   return (
@@ -135,7 +146,7 @@ export const Lend = (): JSX.Element => {
             </Grid>
             <Grid container justify="center" className={styles.submitSection}>
               <Grid item>
-                <Button size="large" variant="outlined">
+                <Button onClick={onClickSubmit} size="large" variant="outlined">
                   Submit
                 </Button>
               </Grid>
