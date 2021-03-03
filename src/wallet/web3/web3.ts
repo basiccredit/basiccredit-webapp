@@ -14,4 +14,3 @@ export const getAccounts = async (): Promise<string[]> => {
   const web3 = await web3Instance;
   return await web3.eth.getAccounts();
 };
-

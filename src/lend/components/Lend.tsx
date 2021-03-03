@@ -15,7 +15,10 @@ import Layout from '../../layout/components/Layout';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import { depositTokens, withdrawTokens } from '../../blockchain/contracts/basicCredit';
+import {
+  depositTokens,
+  withdrawTokens,
+} from '../../blockchain/contracts/basicCredit';
 
 const useStyles = makeStyles((theme: Theme) => ({
   amountInput: {
